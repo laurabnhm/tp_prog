@@ -5,7 +5,10 @@ cmake_policy(SET CMP0009 NEW)
 # MY_SOURCES at CMakeLists.txt:19 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/laura/Desktop/IMAC/Programmation/tp_prog/src/*")
 set(OLD_GLOB
+  "/Users/laura/Desktop/IMAC/Programmation/tp_prog/src/main"
   "/Users/laura/Desktop/IMAC/Programmation/tp_prog/src/main.cpp"
+  "/Users/laura/Desktop/IMAC/Programmation/tp_prog/src/main.dSYM/Contents/Info.plist"
+  "/Users/laura/Desktop/IMAC/Programmation/tp_prog/src/main.dSYM/Contents/Resources/DWARF/main"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
