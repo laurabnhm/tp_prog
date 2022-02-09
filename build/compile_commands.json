@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/laura/Desktop/IMAC/Programmation/tp_prog/build",
+  "command": "/usr/bin/clang++  -I/Users/laura/Desktop/IMAC/Programmation/tp_prog/src -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -Werror -Wall -Wextra -Wpedantic -pedantic-errors -std=gnu++17 -o CMakeFiles/SimpleCpp.dir/src/main.cpp.o -c /Users/laura/Desktop/IMAC/Programmation/tp_prog/src/main.cpp",
+  "file": "/Users/laura/Desktop/IMAC/Programmation/tp_prog/src/main.cpp"
+}
+]
