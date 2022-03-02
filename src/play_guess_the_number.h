@@ -1,3 +1,2 @@
-int pickRandomNumber(int min, int max);
-int askToUser();
+int askNumberToUser();
 void play_guess_the_number();
