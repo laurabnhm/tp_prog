@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-//#include "common_functions.h"
+#include "common_functions.h"
 //#include "play_guess_the_number.h"
 #include "play_hangman.h"
 

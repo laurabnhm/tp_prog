@@ -12,19 +12,16 @@ void play_hangman()
     string final_word;
     bool end_game = false;
     
-    cout << word_chosen << endl;
-
-    for(size_t i = 0; i < word_chosen.size(); i++)
-            final_word += "-";
+    cout << /*word_chosen <<*/ endl;
+    fillWordWithIndents(word_chosen, final_word); // remplir le mot avec des tirets (sans l'afficher)
 
     while (end_game == false) // tant que le jeu n'est pas fini
     {
-        cout << "Tu as " << nb_vies << " vies." << endl; 
-        cout << final_word << endl; // mot qui s'affiche avec des petits traits
-        string ask_letter = askLetterToUser();
+        showNbLives(nb_vies);
+        cout << final_word << endl; // mot qui s'affiche avec les tirets
+        string ask_letter = askLetterToUser(); // demande une lettre à l'utilisateur
 
-        // renvoie la position de la lettre dans le mot qu'on utilisera pour remplir les blancs
-        size_t blank = word_chosen.find(ask_letter);
+        size_t blank = findPosLetter(word_chosen, ask_letter, 0); // renvoie la position de la lettre dans le mot qu'on utilisera pour remplir les blancs
 
         // si la lettre entrée n'est pas dans le mot
         if (blank == string::npos)
@@ -33,9 +30,7 @@ void play_hangman()
             if (nb_vies == 0)
             {
                 end_game = true;
-                cout << "You lose :( " << endl;
-                cout << "The word was " << word_chosen << endl;
-                cout << endl;
+                showDefeatMessage(word_chosen);
             }
         }
         
@@ -44,15 +39,13 @@ void play_hangman()
             while (blank != string::npos) // tant qu'on trouve une lettre dans le mot
             {
                 final_word.replace(blank, 1, ask_letter); // on remplace la lettre dans le mot
-                blank = word_chosen.find(ask_letter, blank+1); // s'il y a plusieurs lettres identiques
+                blank = findPosLetter(word_chosen, ask_letter, blank+1); // s'il y a plusieurs lettres identiques
             }
 
-            if (final_word.find('-') == string::npos) // s'il n'y a plus de petiyts traits dans le mot
+            if (final_word.find('-') == string::npos) // s'il n'y a plus de petits traits dans le mot
             {
                 end_game = true;
-                cout << "You won :) " << endl;
-                cout << "The word was " << word_chosen << endl;
-                cout << endl;
+                showCongratMessage(word_chosen);
             }
         }
     }
@@ -70,6 +63,17 @@ string randomWords()
     return wordsList[pos_word_chosen];
 }
 
+void fillWordWithIndents(string word_chosen, string &final_word) 
+{
+    for(size_t i = 0; i < word_chosen.size(); i++)
+        final_word += "-";
+}
+
+void showNbLives(int nb_vies) 
+{
+    cout << "Tu as " << nb_vies << " vies." << endl;
+}
+
 string askLetterToUser()
 {
     string ask_letter;
@@ -78,3 +82,23 @@ string askLetterToUser()
     cout << endl;
     return ask_letter;
 }
+
+size_t findPosLetter(string word_chosen, string ask_letter, size_t pos) 
+{
+    return word_chosen.find(ask_letter, pos);
+}
+
+void showDefeatMessage(string word_chosen) 
+{
+    cout << "You lose :( " << endl;
+    cout << "The word was " << word_chosen << endl;
+    cout << endl;
+}
+
+void showCongratMessage(string word_chosen) 
+{
+    cout << "You won :) " << endl;
+    cout << "The word was " << word_chosen << endl;
+    cout << endl;
+}
+
