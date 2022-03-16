@@ -32,7 +32,16 @@
     Do not use private methods
     Public methods are meant to access private members --> encapsulation
 ### 04 - Use structs to group data
-    J'ai pas fini de lire
+    Designated initializers
+### 05 - Write small functions
+### 06 - DRY: Don't repeat yourself
+    I use one functions (random) for the "hangman game" and "guess the number" game
+### 07 - Enums
+    Use enum class, not enum
+    using enum
+### 08 - Split problems in small pieces
+### 09 - Composition over Inheritance
+    Use functions to reuse logic or use composition to reuse member variables instead of inheritance
 
 
 # TP faits
