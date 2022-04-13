@@ -8,7 +8,7 @@ using namespace std;
 void play_hangman()
 {
     int nb_vies = 8;
-    string word_chosen = randomWords();
+    const string word_chosen = randomWords();
     string final_word;
     bool end_game = false;
     
@@ -63,7 +63,7 @@ string randomWords()
     return wordsList[pos_word_chosen];
 }
 
-void fillWordWithIndents(string word_chosen, string &final_word) 
+void fillWordWithIndents(const string &word_chosen, string &final_word) 
 {
     for(size_t i = 0; i < word_chosen.size(); i++)
         final_word += "-";
@@ -83,19 +83,19 @@ string askLetterToUser()
     return ask_letter;
 }
 
-size_t findPosLetter(string word_chosen, string ask_letter, size_t pos) 
+size_t findPosLetter(const string &word_chosen, const string &ask_letter, size_t pos) 
 {
     return word_chosen.find(ask_letter, pos);
 }
 
-void showDefeatMessage(string word_chosen) 
+void showDefeatMessage(const string &word_chosen) 
 {
     cout << "You lose :( " << endl;
     cout << "The word was " << word_chosen << endl;
     cout << endl;
 }
 
-void showCongratMessage(string word_chosen) 
+void showCongratMessage(const string &word_chosen) 
 {
     cout << "You won :) " << endl;
     cout << "The word was " << word_chosen << endl;
