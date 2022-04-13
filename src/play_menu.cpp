@@ -5,6 +5,7 @@ using namespace std;
 #include "common_functions.h"
 #include "play_guess_the_number.h"
 #include "play_hangman.h"
+#include "play_menu.h"
 
 void Menu()
 {
