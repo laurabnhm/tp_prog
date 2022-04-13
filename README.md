@@ -43,8 +43,22 @@
 ### 09 - Composition over Inheritance
     Use functions to reuse logic or use composition to reuse member variables instead of inheritance
 
+## LEVEL 3
+### 01 - std::vector
+### 02 - Minimize dependencies
+### 03 - Strong Types
+    Library type_safe
+    Strong types help to give a more concrete representation to concepts, physical units, coordinate spaces... 
+    They prevent logic errors and make APIs harder to misuse.
+### 04 - Use libraries
+    add_subdirectory(libname)
+    target_link_libraries(${PROJECT_NAME} PRIVATE libname)
+    Read the documentation
+### 05 - Range-based for loop
+### 06 - Testing
 
 # TP faits
 
 ### Guess the number
 ### Hangman
+### Adding a menu
